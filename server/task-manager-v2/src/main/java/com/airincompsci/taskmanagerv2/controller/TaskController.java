@@ -44,4 +44,10 @@ public class TaskController {
         response.put("deleted" , deleted);
         return ResponseEntity.ok(response);
     }
+
+    @PutMapping("/tasks/{id}")
+    public ResponseEntity<Task> updateTask(@PathVariable("id") Long id, @RequestBody Task task) {
+        task = taskService.updateTask(id, task);
+        return ResponseEntity.ok(task);
+    }
 }

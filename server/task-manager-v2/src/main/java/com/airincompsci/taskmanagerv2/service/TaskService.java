@@ -12,4 +12,6 @@ public interface TaskService {
     Task getTaskById(Long id);
 
     boolean deleteTask(Long id);
+
+    Task updateTask(Long id, Task task);
 }
