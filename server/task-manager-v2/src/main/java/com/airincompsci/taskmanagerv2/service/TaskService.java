@@ -8,4 +8,8 @@ public interface TaskService {
     Task saveTask(Task task);
 
     List<Task> getAllTasks();
+
+    Task getTaskById(Long id);
+
+    boolean deleteTask(Long id);
 }

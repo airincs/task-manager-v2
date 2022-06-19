@@ -37,4 +37,19 @@ public class TaskServiceImpl implements TaskService{
         )).collect(Collectors.toList());
         return tasks;
     }
+
+    @Override
+    public Task getTaskById(Long id) {
+        TaskEntity taskEntity = taskRepository.findById(id).get();
+        Task task = new Task();
+        BeanUtils.copyProperties(taskEntity, task);
+        return task;
+    }
+
+    @Override
+    public boolean deleteTask(Long id) {
+        TaskEntity task = taskRepository.findById(id).get();
+        taskRepository.delete(task);
+        return true;
+    }
 }
