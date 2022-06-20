@@ -2,12 +2,12 @@
 
 Welcome to my Task Manager project. This is a full-stack project that uses Java's Spring Boot on the backend and uses NextJS + TypeScript on the frontend.
 This Task Manager Project contains the following:
--Spring Boot
--Spring Web
--Spring Data JPA
--Hibernate
--MySQL
--Lombok
+- Spring Boot
+- Spring Web
+- Spring Data JPA
+- Hibernate
+- MySQL
+- Lombok
 
 The Spring Boot application communicates with the NextJS frontend via REST API endpoints. The frontend allows the user to create, read, update, and delete tasks.
 
