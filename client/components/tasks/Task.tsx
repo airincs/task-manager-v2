@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import axios from "axios";
 
 type AppProps = {
@@ -6,6 +6,7 @@ type AppProps = {
 };
 
 const Task = ({ task }: AppProps) => {
+  const [taskId, setTaskId] = useState<any>(null);
   const TASK_API_BASE_URL = "http://localhost:8080/api/tasks";
   const deleteTask = (e: any, id: any) => {
     e.preventDefault();
@@ -21,12 +22,16 @@ const Task = ({ task }: AppProps) => {
       });
   };
 
+  const editTask = (e: any, id: any) => {
+    e.preventDefault();
+    setTaskId(id);
+  };
+
   return (
-    <div className="bg-cyan-200 container flex flex-col items-center">
+    <div>
       <div>{task.title}</div>
       <div>{task.message}</div>
       <div>{task.author}</div>
-
       <button
         onClick={(e) => deleteTask(e, task.id)}
         className="bg-red-200 text-black"
