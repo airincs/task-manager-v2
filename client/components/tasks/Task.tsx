@@ -28,13 +28,13 @@ const Task = ({ task }: AppProps) => {
   };
 
   return (
-    <div>
-      <div>{task.title}</div>
+    <div className={"flex justify-center flex-col min-w-full"}>
+      <div className="font-bold">{task.title}</div>
       <div>{task.message}</div>
-      <div>{task.author}</div>
+      <div className="font-light mt-2">Author: {task.author}</div>
       <button
         onClick={(e) => deleteTask(e, task.id)}
-        className="bg-red-200 text-black"
+        className="bg-red-200 text-black rounded-lg p-1 w-full"
       >
         Delete
       </button>

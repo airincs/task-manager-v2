@@ -73,45 +73,48 @@ const TaskList = () => {
 
   return (
     <div className="flex flex-col items-center">
-      <div className="bg-cyan-400 container flex-col items-center flex">
-        Add/Edit Task
+      <div className="container">
+        <div className="bg-slate-900 container flex-col items-center flex text-white">
+          Add/Edit Task
+        </div>
+        <div className="container flex justify-center bg-slate-700 text-white">
+          <label>Title: </label>
+          <input
+            type="text"
+            className="mx-2 text-black"
+            name="title"
+            value={task.title}
+            onChange={(e) => handleChange(e)}
+          ></input>
+        </div>
+        <div className="container flex justify-center bg-slate-700 text-white">
+          <label>Message: </label>
+          <input
+            type="text"
+            className="mx-2 text-black"
+            name="message"
+            value={task.message}
+            onChange={(e) => handleChange(e)}
+          ></input>
+        </div>
+        <div className="container flex justify-center bg-slate-700 text-white">
+          <label>Author: </label>
+          <input
+            type="text"
+            className="mx-2 text-black"
+            name="author"
+            value={task.author}
+            onChange={(e) => handleChange(e)}
+          ></input>
+        </div>
+        <button onClick={submitTask} className="w-6/12 bg-green-200 text-black">
+          Submit
+        </button>
+        <button onClick={clear} className="w-6/12 bg-red-200 text-black">
+          Clear
+        </button>
       </div>
-      <div className="container flex justify-center bg-cyan-200">
-        <label>Title: </label>
-        <input
-          type="text"
-          className="mx-2"
-          name="title"
-          value={task.title}
-          onChange={(e) => handleChange(e)}
-        ></input>
-      </div>
-      <div className="container flex justify-center bg-cyan-200">
-        <label>Message: </label>
-        <input
-          type="text"
-          className="mx-2"
-          name="message"
-          value={task.message}
-          onChange={(e) => handleChange(e)}
-        ></input>
-      </div>
-      <div className="container flex justify-center bg-cyan-200">
-        <label>Author: </label>
-        <input
-          type="text"
-          className="mx-2"
-          name="author"
-          value={task.author}
-          onChange={(e) => handleChange(e)}
-        ></input>
-      </div>
-      <button onClick={submitTask} className="w-1/12 bg-green-200 text-black">
-        Submit
-      </button>
-      <button onClick={clear} className="w-1/12 bg-red-200 text-black">
-        Clear
-      </button>
+
       <div>
         {!loading
           ? tasks.data.map((task: any) => (
@@ -122,7 +125,7 @@ const TaskList = () => {
                 <Task task={task} />
                 <button
                   onClick={(e) => editTask(e, task.id)}
-                  className="bg-green-200 text-black"
+                  className="bg-green-200 text-black rounded-lg p-1 w-full"
                 >
                   Edit
                 </button>
